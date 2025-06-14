@@ -1,10 +1,11 @@
 {
   "scripts": {
     "prebuild": "tstl",
-    "build": "gly-cli build-html build/src/game.lua --fengari --enginecdn"
+    "build": "gly-cli build-html --cwd build src/game.lua --fengari --enginecdn --atob"
   },
   "dependencies": {
-    "@gamely/gly-cli": "0.1.1",
+    "@gamely/gly-cli": "0.1.2",
+    "@gamely/gly-types": "0.1.2",
     "typescript-to-lua": "^1.31.2"
   }
 }

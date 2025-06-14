@@ -1,10 +1,12 @@
+import { GlyStd } from "@gamely/gly-types";
+
 export const meta = {
     title: 'Pong',
     version: '0.1.1',
     description: 'simple pong game write in typescript + gly engine'
 }
 
-function init(std: any, game: any) {
+function init(std: GlyStd, game: any) {
     game.score = 0;
     game.highscore = game.highscore == null ? 0 : game.highscore;
     game.player_size = game.height / 8;
@@ -16,7 +18,7 @@ function init(std: any, game: any) {
     game.ball_size = 8;
 }
 
-function loop(std: any, game: any) {
+function loop(std: GlyStd, game: any) {
     const new_player_pos: number = game.player_pos + (std.key.axis.y * 7)
     game.player_pos = std.math.clamp(new_player_pos, 0, game.height - game.player_size);
     
@@ -46,7 +48,7 @@ function loop(std: any, game: any) {
     }
 }
 
-function draw(std: any, game: any) {
+function draw(std: GlyStd, game: any) {
     std.draw.clear(std.color.black);
     std.draw.color(std.color.white);
     std.draw.rect(0, 4, game.player_pos, 8, game.player_size);
@@ -55,7 +57,7 @@ function draw(std: any, game: any) {
     std.text.put(60, 1, game.highscore.toString());
 }
 
-function exit(std: any, game: any) {
+function exit(std: GlyStd, game: any) {
     game.highscore = std.math.max(game.highscore, game.score);
 }
 
