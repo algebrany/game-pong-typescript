@@ -2,7 +2,7 @@
   "scripts": {
     "prebuild": "tstl",
     "build": "gly-cli build-html --cwd build src/game.lua --fengari --enginecdn --atob",
-    "start": "npx serve -l 80 ./dist"
+    "start": "npm run build && npx serve -l 80 ./dist"
 
   },
   "dependencies": {
