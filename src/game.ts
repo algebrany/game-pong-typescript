@@ -49,7 +49,7 @@ function loop(std: GlyStd, game: any) {
 }
 
 function draw(std: GlyStd, game: any) {
-    std.draw.clear(std.color.black);
+    std.draw.clear(std.color.red);
     std.draw.color(std.color.white);
     std.draw.rect(0, 4, game.player_pos, 8, game.player_size);
     std.draw.rect(0, game.ball_pos_x, game.ball_pos_y, game.ball_size, game.ball_size);
